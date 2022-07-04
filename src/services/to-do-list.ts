@@ -17,7 +17,7 @@ class ToDoListService {
     };
   
   public update = async (
-    id: number,
+    id: string,
     task: string,
     createdAt: string,
     inProgress: boolean,
@@ -28,8 +28,8 @@ class ToDoListService {
     return findTaskById;
   };
 
-  public delete = async (id: number) : Promise<void | null> => {
-    const deleteTask = await ToDoList.destroy({ where: { id: id } });
+  public delete = async (id: string) : Promise<void | null> => {
+    const deleteTask = await ToDoList.destroy({ where: { id } });
     if (deleteTask === null) throw new Error('Task not found');
   }
 }
