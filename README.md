@@ -8,3 +8,6 @@
 - Instalação do ts-node-dev;
 - Instalação do types-node;
 - Instalação do types-express;
+- Criação do arquivo mock para um banco de dados para realizar o TDD;
+- Criação do arquivo app;
+
