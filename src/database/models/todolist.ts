@@ -1,32 +1,22 @@
 import { Model, DataTypes } from 'sequelize';
 import connection from '.';
-// import { Model, DataTypes } from 'sequelize';
-// import connection from '.';
-// import Team from './teams';
 
-// class Match extends Model {
-//   public id: number;
-//   public homeTeam: number;
-//   public homeTeamGoals: number;
-//   public awayTeam: number;
-//   public awayTeamGoals: number;
-//   public inProgress: boolean;
-//   public teamHome: {
-//     teamName: string;
-//   };
+class ToDoList extends Model {
+  public id: number;
+  public task: string;
+  public createdAt: string;
+  public inProgress: boolean;
 
-//   public teamAway: {
-//     teamName: string;
-//   };
-// }
-// Match.init({
-//   homeTeam: DataTypes.NUMBER,
-//   homeTeamGoals: DataTypes.NUMBER,
-//   awayTeam: DataTypes.NUMBER,
-//   awayTeamGoals: DataTypes.NUMBER,
-//   inProgress: DataTypes.BOOLEAN,
-// }, {
-//   sequelize: connection,
-//   underscored: true,
-//   timestamps: false,
-// });
+}
+
+ToDoList.init({
+  task: DataTypes.STRING,
+  createdAt: DataTypes.STRING,
+  inProgress: DataTypes.BOOLEAN,
+}, {
+  sequelize: connection,
+  underscored: true,
+  timestamps: false,
+});
+
+export default ToDoList;
