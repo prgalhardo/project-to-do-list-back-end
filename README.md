@@ -11,5 +11,7 @@
 - Criação do arquivo mock para um banco de dados para realizar o TDD;
 - Criação do arquivo app;
 - Criação das migration, model e seeder;
+- Criação da service com os métodos CRUD;
+
 
 

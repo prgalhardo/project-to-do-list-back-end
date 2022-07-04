@@ -1,17 +1,37 @@
-// import Team from '../database/models/teams';
-// import ITeam from '../interfaces/team.interface';
+import ToDoList from '../database/models/todolist';
+import IToDoList from '../interfaces/to-do-list-interface';
 
-// class TeamsService {
-//   public findAll = async (): Promise<ITeam[] | null> => {
-//     const teamsInfos = await Team.findAll();
-//     return teamsInfos;
-//   };
+class ToDoListService {
+  public findAll = async (): Promise<IToDoList[]> => {
+    const list = await ToDoList.findAll();
+    return list;
+  }
 
-//   public findById = async (id: string): Promise<ITeam | null> => {
-//     const team = await Team.findByPk(id);
-//     if (team === null) throw new Error('Team not found');
-//     return team;
-//   };
-// }
+  public create = async ({ task, createdAt, inProgress }:
+    ToDoList): Promise<IToDoList> => {
+      const newTask = await ToDoList.create({
+        task, createdAt, inProgress
+      });
+  
+      return newTask;
+    };
+  
+  public update = async (
+    id: number,
+    task: string,
+    createdAt: string,
+    inProgress: boolean,
+  ): Promise<ToDoList | null> => {
+    const findTaskById = await ToDoList.findOne({ where: { id } });
+    if (findTaskById === null ) throw new Error('Task not found');
+    await ToDoList.update({ task, createdAt, inProgress }, { where: { id } });
+    return findTaskById;
+  };
 
-// export default TeamsService;
+  public delete = async (id: number) : Promise<void | null> => {
+    const deleteTask = await ToDoList.destroy({ where: { id: id } });
+    if (deleteTask === null) throw new Error('Task not found');
+  }
+}
+
+export default ToDoListService;
