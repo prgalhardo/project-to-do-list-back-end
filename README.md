@@ -1,18 +1,19 @@
 <strong># Project To Do List - Backend!</strong></ br>
 
-  Para a realização desse projeto a versão do node precisa estar atualizada, aqui foi usada a 16 e também foi necessário a instalação dos seguintes programas: </ br>
-    * `eslint`;
-    * `typescript`;
-    * `ts-node-dev`;
-    * `types-node`;
-    * `types-express`;
-    * `sequelize e sequelize-cli`;
-    * `mysql2`;
-    * `dotenv`;
-    * `nodemon`;
-    * `mocha`;
-    * `chai e chai-Http`;
-    * `sinon`; < /br>
+  Para a realização desse projeto a versão do node precisa estar atualizada, aqui foi usada a 16 e também foi necessário a instalação dos seguintes programas:
+  
+    * eslint;
+    * typescript;
+    * ts-node-dev;
+    * types-node;
+    * types-express;
+    * sequelize e sequelize-cli;
+    * mysql2;
+    * dotenv;
+    * nodemon;
+    * mocha;
+    * chai e chai-Http;
+    * sinon;
 
 - Foram usadas variáveis globais do MYSQL. Tópico de referência para realizar a configuração: (https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/).
 
