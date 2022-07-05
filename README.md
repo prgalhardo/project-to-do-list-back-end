@@ -1,23 +1,37 @@
-# project-to-do-list-back-end
+<strong># Project To Do List - Backend!</strong></ br>
 
-- Instalação e configuração do ESlint;
-- Instalação do mocha, chai, sinon e chai-Http;
-- Instalação do typescript;
-- Instalação do sequelize, sequelize-cli e mysql2;
-- Instalação do dotenv;
-- Instalação do ts-node-dev;
-- Instalação do types-node;
-- Instalação do types-express;
-- Criação do arquivo mock para um banco de dados para realizar o TDD;
-- Criação do arquivo app;
-- Criação das migration, model e seeder;
-- Criação da interface de To Do List;
-- Criação da service com os métodos CRUD;
-- Criação da controller com os métodos CRUD;
+  Para a realização desse projeto a versão do node precisa estar atualizada, aqui foi usada a 16 e também foi necessário a instalação dos seguintes programas: </ br>
+    * `eslint`;
+    * `typescript`;
+    * `ts-node-dev`;
+    * `types-node`;
+    * `types-express`;
+    * `sequelize e sequelize-cli`;
+    * `mysql2`;
+    * `dotenv`;
+    * `nodemon`;
+    * `mocha`;
+    * `chai e chai-Http`;
+    * `sinon`; < /br>
+
+- Foram usadas variáveis globais do MYSQL. Tópico de referência para realizar a configuração: (https://blog.rocketseat.com.br/variaveis-ambiente-nodejs/).
+
+**Finalidade da aplicação**
+<details>
+<strong><h4>Lista de tarefas</strong></h4>
+
+  * A aplicação permite criar uma API onde terá a lista de tarefas para a organização da pessoa usuária, ela será capaz:
+    - Realizar uma requisição GET para listar todas as tarefas;
+    - Realizar uma requisição POST para criar uma nova tarefa;
+    - Realizar uma requisição PUT para atualizar uma tarefa;
+    - Realizar uma requisição DELETE para deletar uma tarefa;
 
 
-- Problemas com a query do sequelize:
-* Ao criar a migration o timestamps estava como false, porém existia o campo createdAt na tabela e na model ele estava setado para ser criado manualmente isso estava gerando conflitos na hora de fazer uma requisição no insomnia. Solução: Deixar setado para o próprio db criar os campos createdAt e updatedAt.
+
+
+
+
+
 
 
 
