@@ -37,8 +37,8 @@ class ToDoListController {
         this.update = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const { id } = req.params;
-                const { task, createdAt, inProgress } = req.body;
-                yield this.toDoListService.update(id, task, createdAt, inProgress);
+                const { task, taskStatus } = req.body;
+                yield this.toDoListService.update(id, task, taskStatus);
                 return res.status(200).json({ message: 'Updated task' });
             }
             catch (error) {

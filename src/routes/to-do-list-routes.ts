@@ -1,30 +1,14 @@
 import { Router } from 'express';
+// import * as express from 'express';
+// const express = require('express');
 import ToDoListController from '../controllers/to-do-list';
 
-const tasksRoutes = Router();
-const tasksInfos = new ToDoListController();
+const router = Router();
 
-tasksRoutes.get('/', tasksInfos.findAll);
+// const tasksRoutes = Router();
+const tasks = new ToDoListController();
 
-export default tasksRoutes;
+router.get('/todolist', tasks.findAll);
 
-// import { Router } from 'express';
-// import validateLoginBody,
-// { validateEmailInDB,
-//   validatePasswordInDB } from '../middlewares/loginMiddleware';
-// import LoginController from '../controllers/loginController';
-// import TokenAuthorization from '../middlewares/tokenMiddleware';
+module.exports = router;
 
-// const loginRoutes = Router();
-// const loginInfos = new LoginController();
-
-// loginRoutes.post(
-//   '/login',
-//   validateLoginBody,
-//   validateEmailInDB,
-//   validatePasswordInDB,
-//   loginInfos.create,
-// );
-// loginRoutes.get('/login/validate', TokenAuthorization, loginInfos.findOne);
-
-// export default loginRoutes;

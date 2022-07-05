@@ -1,8 +1,7 @@
 interface IToDoList {
   id: number,
   task: string,
-  createdAt: string,
-  inProgress: boolean,
+  taskStatus: string,
 }
 
 export default IToDoList;

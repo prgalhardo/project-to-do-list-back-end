@@ -17,19 +17,20 @@ class ToDoListService {
     constructor() {
         this.findAll = () => __awaiter(this, void 0, void 0, function* () {
             const list = yield todolist_1.default.findAll();
+            console.log(list);
             return list;
         });
-        this.create = ({ task, createdAt, inProgress }) => __awaiter(this, void 0, void 0, function* () {
+        this.create = ({ task, taskStatus }) => __awaiter(this, void 0, void 0, function* () {
             const newTask = yield todolist_1.default.create({
-                task, createdAt, inProgress
+                task, taskStatus
             });
             return newTask;
         });
-        this.update = (id, task, createdAt, inProgress) => __awaiter(this, void 0, void 0, function* () {
+        this.update = (id, task, taskStatus) => __awaiter(this, void 0, void 0, function* () {
             const findTaskById = yield todolist_1.default.findOne({ where: { id } });
             if (findTaskById === null)
                 throw new Error('Task not found');
-            yield todolist_1.default.update({ task, createdAt, inProgress }, { where: { id } });
+            yield todolist_1.default.update({ task, taskStatus }, { where: { id } });
             return findTaskById;
         });
         this.delete = (id) => __awaiter(this, void 0, void 0, function* () {

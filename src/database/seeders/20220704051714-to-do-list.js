@@ -1,34 +1,39 @@
 'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('ToDoLists',
+  up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('tasksList',
     [
       {
         task: 'Tarefa 1',
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        in_progress: true,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        task_status: false,
       },
       {
         task: 'Tarefa 2',
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        in_progress: true,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        task_status: false,
       },
       {
         task: 'Tarefa 3',
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        in_progress: true,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        task_status: true,
       },
       {
         task: 'Tarefa 4',
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        in_progress: true,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        task_status: true,
       },
       {
         task: 'Tarefa 5',
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
-        in_progress: true,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        task_status: true,
       },
     ], {}),
 
-  down: async (queryInterface) => queryInterface.bulkDelete('Users', null, {}),
+  down: async (queryInterface) => queryInterface.bulkDelete('tasksList', null, {}),
 };

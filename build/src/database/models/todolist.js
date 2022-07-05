@@ -9,11 +9,13 @@ class ToDoList extends sequelize_1.Model {
 }
 ToDoList.init({
     task: sequelize_1.DataTypes.STRING,
-    createdAt: sequelize_1.DataTypes.STRING,
-    inProgress: sequelize_1.DataTypes.BOOLEAN,
+    createdAt: sequelize_1.DataTypes.DATEONLY,
+    updatedAt: sequelize_1.DataTypes.DATEONLY,
+    taskStatus: sequelize_1.DataTypes.STRING,
 }, {
     sequelize: _1.default,
     underscored: true,
-    timestamps: false,
+    tableName: 'tasksList',
+    modelName: 'tasksList'
 });
 exports.default = ToDoList;

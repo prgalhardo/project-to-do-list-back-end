@@ -15,6 +15,9 @@
 - Criação da service com os métodos CRUD;
 - Criação da controller com os métodos CRUD;
 
+- Problemas com a query do sequelize:
+* Ao criar a migration o timestamps estava como false, porém existia o campo createdAt na tabela e na model ele estava setado para ser criado manualmente isso estava gerando conflitos na hora de fazer uma requisição no insomnia. Solução: Deixar setado para o próprio db criar os campos createdAt e updatedAt.
+
 
 
 

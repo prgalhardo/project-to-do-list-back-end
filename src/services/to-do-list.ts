@@ -2,15 +2,16 @@ import ToDoList from '../database/models/todolist';
 import IToDoList from '../interfaces/to-do-list-interface';
 
 class ToDoListService {
-  public findAll = async (): Promise<IToDoList[]> => {
+  public findAll = async (): Promise<ToDoList[]> => {
     const list = await ToDoList.findAll();
+    console.log(list);
     return list;
   }
 
-  public create = async ({ task, createdAt, inProgress }:
+  public create = async ({ task, taskStatus }:
     ToDoList): Promise<IToDoList> => {
       const newTask = await ToDoList.create({
-        task, createdAt, inProgress
+        task, taskStatus
       });
   
       return newTask;
@@ -19,12 +20,11 @@ class ToDoListService {
   public update = async (
     id: string,
     task: string,
-    createdAt: string,
-    inProgress: boolean,
+    taskStatus: boolean,
   ): Promise<ToDoList | null> => {
     const findTaskById = await ToDoList.findOne({ where: { id } });
     if (findTaskById === null ) throw new Error('Task not found');
-    await ToDoList.update({ task, createdAt, inProgress }, { where: { id } });
+    await ToDoList.update({ task, taskStatus }, { where: { id } });
     return findTaskById;
   };
 

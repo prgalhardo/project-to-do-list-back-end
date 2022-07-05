@@ -25,8 +25,8 @@ class ToDoListController {
   public update = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { id } = req.params;
-      const { task, createdAt, inProgress } = req.body;
-      await this.toDoListService.update(id, task, createdAt, inProgress);
+      const { task, taskStatus } = req.body;
+      await this.toDoListService.update(id, task, taskStatus);
       return res.status(200).json({ message: 'Updated task' });
     } catch (error) {
       next(error);
