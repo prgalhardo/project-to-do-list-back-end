@@ -1,4 +1,4 @@
-<strong># Project To Do List - Backend!</strong></ br>
+<strong># Project To Do List - Backend!</strong>
 
   Para a realização desse projeto a versão do node precisa estar atualizada, aqui foi usada a 16 e também foi necessário a instalação dos seguintes programas:
   
