@@ -9,7 +9,6 @@ class ToDoList extends Model {
 }
 
 ToDoList.init({
-  id: DataTypes.NUMBER,
   task: DataTypes.STRING,
   createdAt: DataTypes.DATEONLY,
   updatedAt: DataTypes.DATEONLY,
